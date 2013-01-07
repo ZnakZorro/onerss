@@ -1,8 +1,8 @@
     function playBeep() {
-        navigator.notification.beep(3);
+        navigator.notification.beep(1);
     }
     function vibrate() {
-        navigator.notification.vibrate(2000);
+        navigator.notification.vibrate(333);
     }
 
 
@@ -41,9 +41,9 @@ var watchLastZ=0;
 			//if (suma < -3) {goback(); return;}
 			//if (suma > 9)  {gonext(); return;}
 		
-			if (acceleration.z <5)  {playBeep();}
-			if (acceleration.z <4)  {vibrate();}
-			if (acceleration.z <3)  {playBeep();gonext(); return;}
+			//if (acceleration.z <5)  {playBeep();}
+			//if (acceleration.z <4)  {vibrate();}
+			if (acceleration.z <3)  {vibrate();gonext(); return;}
 		
 			
 			
