@@ -1,3 +1,11 @@
+    function playBeep() {
+        navigator.notification.beep(3);
+    }
+    function vibrate() {
+        navigator.notification.vibrate(2000);
+    }
+
+
 //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 var watchLastX=0;
 var watchLastY=0;
@@ -33,7 +41,9 @@ var watchLastZ=0;
 			//if (suma < -3) {goback(); return;}
 			//if (suma > 9)  {gonext(); return;}
 		
-			if (acceleration.z <3)  {gonext(); return;}
+			if (acceleration.z <5)  {playBeep();}
+			if (acceleration.z <4)  {vibrate();}
+			if (acceleration.z <3)  {playBeep();gonext(); return;}
 		
 			
 			
