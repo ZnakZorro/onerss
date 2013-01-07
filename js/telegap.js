@@ -183,7 +183,8 @@ function podzielsie2(){
 function loadURL(url){
 try  { navigator.app.loadUrl(url, { openExternal:true } );  }
 catch(err) {
-  window.location.href=url;
+  //window.location.href=url;
+  window.open(url,'_blank');
   //console.log(err+"\n"+url);
   }
 //if (device.platform) navigator.app.loadUrl(url, { openExternal:true } ); 
