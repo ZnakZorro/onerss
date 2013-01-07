@@ -33,7 +33,7 @@ var watchLastZ=0;
 			//if (suma < -3) {goback(); return;}
 			//if (suma > 9)  {gonext(); return;}
 		
-			if (acceleration.z <2)  {gonext(); return;}
+			if (acceleration.z <3)  {gonext(); return;}
 		
 			
 			
