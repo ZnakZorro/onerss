@@ -38,7 +38,7 @@ table.traffic tr.sectiontableentry2 {background:#f4f4f4;}
 table.traffic tr.sectiontableheader {background:#444; color:#fff;}
 
 .box {/*-webkit-border-radius:9px 9px 9px 9px; border-radius:9px 9px 9px 9px;*/}
-#title {text-align:center;color:white; padding:0.5%; margin:0; background:#248;}
+#title {text-align:center;color:white; padding:10px 5px; margin:0; background:#248; height:35px;}
 
 
 
