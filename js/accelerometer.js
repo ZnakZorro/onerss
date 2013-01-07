@@ -27,8 +27,8 @@ var watchLastZ=0;
 			var suma=deltaY+deltaZ;
 			var sumaa=acceleration.y+acceleration.z;
 			watchLastY = acceleration.y;
-			$('#infotest').innerHTML='A :x:'+acceleration.x+' :y:'+acceleration.y+' :z:'+acceleration.z+' :s:'+sumaa+'<br />';
-			$('#infotest').innerHTML+='D :x:'+deltaX+' :y:'+deltaY+' :z:'+deltaZ+' :s:'+suma+'<br />';
+			//$('#infotest').innerHTML='A :x:'+acceleration.x+' :y:'+acceleration.y+' :z:'+acceleration.z+' :s:'+sumaa+'<br />';
+			//$('#infotest').innerHTML+='D :x:'+deltaX+' :y:'+deltaY+' :z:'+deltaZ+' :s:'+suma+'<br />';
 			//if (suma < -3) {goback(); return;}
 			//if (suma > 9)  {gonext(); return;}
 		
