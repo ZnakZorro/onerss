@@ -2,7 +2,7 @@
         navigator.notification.beep(1);
     }
     function vibrate() {
-        navigator.notification.vibrate(333);
+        navigator.notification.vibrate(200);
     }
 
 
@@ -35,7 +35,7 @@ var watchLastZ=0;
 			var suma=deltaY+deltaZ;
 			var sumaa=acceleration.y+acceleration.z;
 			watchLastY = acceleration.y;
-			$('#title').innerHTML=' : '+acceleration.z;
+			//$('#title').innerHTML=' : '+acceleration.z;
 			//$('#infotest').innerHTML='A :x:'+acceleration.x+' :y:'+acceleration.y+' :z:'+acceleration.z+' :s:'+sumaa+'<br />';
 			//$('#infotest').innerHTML+='D :x:'+deltaX+' :y:'+deltaY+' :z:'+deltaZ+' :s:'+suma+'<br />';
 			//if (suma < -3) {goback(); return;}
