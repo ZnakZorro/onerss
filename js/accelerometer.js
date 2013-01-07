@@ -27,12 +27,16 @@ var watchLastZ=0;
 			var suma=deltaY+deltaZ;
 			var sumaa=acceleration.y+acceleration.z;
 			watchLastY = acceleration.y;
+			$('#title').innerHTML+=' : '+acceleration.z;
 			//$('#infotest').innerHTML='A :x:'+acceleration.x+' :y:'+acceleration.y+' :z:'+acceleration.z+' :s:'+sumaa+'<br />';
 			//$('#infotest').innerHTML+='D :x:'+deltaX+' :y:'+deltaY+' :z:'+deltaZ+' :s:'+suma+'<br />';
 			//if (suma < -3) {goback(); return;}
 			//if (suma > 9)  {gonext(); return;}
 		
 			if (acceleration.z <2)  {gonext(); return;}
+		
+			
+			
 			//if (acceleration.y < -3) {goback(); return;}
 			//if (acceleration.y > 9)  {gonext(); return;}
 			//acceleration.timestamp
