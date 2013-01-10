@@ -51,6 +51,8 @@ var watchLastZ=0;
 			//if (suma > 9)  {gonext(); return;}
 		
 			//if (acceleration.z <3)  {vibrate();gonext(); return;}
+$('#test').style.display='block';
+$('#test').innerHTML=(Math.round(acceleration.z * 10)/10);
 			
 			if (acceleration.z >7)  {scrollNow(-1)}
 			if (acceleration.z <6)  {scrollNow(1)}
