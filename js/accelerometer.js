@@ -12,7 +12,7 @@ var watchLastY=0;
 var watchLastZ=0;
 
 	var scroll_position=0;
-	var scroll_step=30;
+	var scroll_step=90;
 	
 	function scrollNow(poz){
 		if (poz>0) {scroll_position=scroll_position+scroll_step;}
@@ -59,8 +59,8 @@ $('#title').style.color=kolor;
 $('#test').style.display='block';
 $('#test').innerHTML=(zz);
 			
-			if (acceleration.z >8)  {scrollNow(-1)}
-			if (acceleration.z <6)  {scrollNow(1)}
+			if (acceleration.z >8)  {scrollNow(-1); return;}
+			if (acceleration.z <6)  {scrollNow(1); return;}
 			if (acceleration.z <4)  {graj('page.mp3'); gonext(); return;}
 		
 			
