@@ -41,9 +41,8 @@ var watchLastZ=0;
 			//if (suma < -3) {goback(); return;}
 			//if (suma > 9)  {gonext(); return;}
 		
-			//if (acceleration.z <5)  {playBeep();}
-			//if (acceleration.z <4)  {vibrate();}
-			if (acceleration.z <3)  {vibrate();gonext(); return;}
+			//if (acceleration.z <3)  {vibrate();gonext(); return;}
+			if (acceleration.z <4)  {graj('page.mp3'); gonext(); return;}
 		
 			
 			

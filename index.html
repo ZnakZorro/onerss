@@ -47,6 +47,7 @@
  	<script type="text/javascript" charset="utf-8" src="js/telegap.js"></script>
  	<script type="text/javascript" charset="utf-8" src="js/popup.js"></script>
  	<script type="text/javascript" charset="utf-8" src="js/accelerometer.js"></script>
+ 	<script type="text/javascript" charset="utf-8" src="js/media.js"></script>
  	
 <script type="text/javascript" charset="utf-8">
 var ___moje='eede2de857491ec7';
@@ -186,7 +187,7 @@ function moveID(kier){
 }
 
    	function gonext() {
-   		
+   		graj('page.mp3');
 		var idmax=rssy.length;
 		var id=czytajID();
 		id++;
@@ -195,6 +196,7 @@ function moveID(kier){
 		rssfeedsetup(id);
 	}
    	function goback() {
+	graj('page.mp3');
 		var idmax=rssy.length-1;
 		var id=czytajID();
 		id--;
