@@ -26,7 +26,7 @@
 	article {
 		width: 47.95%;
 	}
-	div.hh1 {font-size:100%; line-height:110%;}
+	div.hh1 {font-size:110%; line-height:110%;}
 }	
 	
 @media (max-width:638px){
@@ -192,7 +192,7 @@ function moveID(kier){
 }
 
    	function gonext() {
-   		graj('page-mini.mp3');
+   		//graj('page-mini.mp3');
 		var idmax=rssy.length;
 		var id=czytajID();
 		id++;
@@ -201,7 +201,7 @@ function moveID(kier){
 		rssfeedsetup(id);
 	}
    	function goback() {
-	graj('page-mini.mp3');
+		//graj('page-mini.mp3');
 		var idmax=rssy.length-1;
 		var id=czytajID();
 		id--;
@@ -419,6 +419,10 @@ function viewImages(){
 		<button onClick="ustawCzas(this);" rel="168" class="h btn btn-mini btn-inverse" id="h168" title="ostatni tydzień"> 7d </button>
 		<button onClick="ustawCzas(this);" rel="0"   class="h btn btn-mini btn-inverse" id="h0"   title="infinity"> &infin; </button>
 		<button onClick="kasuj_czas();"              class="h btn btn-mini btn-danger"  id="kasuj_czas"    >all</button>
+	
+			<button onClick="scrollNow(-1);" class="btn btn-inverse" >-1</button> &nbsp; 
+			<button onClick="scrollNow(1);" class="btn btn-inverse" >+1</button> &nbsp; 
+
 	</div>	
 
 	
@@ -445,8 +449,6 @@ function viewImages(){
 		<button onClick="viewRemotelinki(___self);" class="btn">zURL</button> &nbsp;  
 		<button onClick="viewImages();" class="btn btn-inverse" id="button_img" >img</button> &nbsp; 
 
-<button onClick="scrollNow(-1);" class="btn btn-inverse" >-1</button> &nbsp; 
-<button onClick="scrollNow(1);" class="btn btn-inverse" >+1</button> &nbsp; 
 
 
 		
