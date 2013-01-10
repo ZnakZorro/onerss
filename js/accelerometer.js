@@ -12,11 +12,12 @@ var watchLastY=0;
 var watchLastZ=0;
 
 	var scroll_position=0;
-	var scroll_step=10;
+	var scroll_step=30;
 	
 	function scrollNow(poz){
 		if (poz>0) {scroll_position=scroll_position+scroll_step;}
 		if (poz<0) {scroll_position=scroll_position-scroll_step;}
+		//console.log(scroll_position);
  		window.scrollTo(0,scroll_position);
 		
 		}
@@ -51,10 +52,14 @@ var watchLastZ=0;
 			//if (suma > 9)  {gonext(); return;}
 		
 			//if (acceleration.z <3)  {vibrate();gonext(); return;}
+//acceleration.z=Math.random()*10;
+var zz=Math.round(acceleration.z * 100);			
+var kolor='#'+zz+zz+zz;
+$('#title').style.color=kolor;
 $('#test').style.display='block';
-$('#test').innerHTML=(Math.round(acceleration.z * 10)/10);
+$('#test').innerHTML=(zz);
 			
-			if (acceleration.z >7)  {scrollNow(-1)}
+			if (acceleration.z >8)  {scrollNow(-1)}
 			if (acceleration.z <6)  {scrollNow(1)}
 			if (acceleration.z <4)  {graj('page.mp3'); gonext(); return;}
 		
