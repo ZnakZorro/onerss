@@ -336,7 +336,7 @@ function koniec(){
 					// czas  ostatnio -----------------------------------------
 			//console.log(thefeeds[i]);
 			var link  = korekta_link(thefeeds[i].link,thefeeds[i].content);
-			var image = szukaj_img(thefeeds[i].link,thefeeds[i].content);
+			if (showImages) var image = szukaj_img(thefeeds[i].link,thefeeds[i].content); else var image=null;
 			rssoutput+='<div class="art">';
 			/*rssoutput+="<a href='javascript:void(0)' rel-title='" + thefeeds[i].title + "'  rel-link='" + link + "' rel-lokalizacja='"+result.feed.title+"' rel-sekcja='"+sekcja+"' onClick='popup_open(this);'>";
 				rssoutput+="<span class='btn btn-small pull-right czas'>" + toDate(thefeeds[i].publishedDate) + "</span>";
@@ -348,7 +348,7 @@ function koniec(){
 			rssoutput+="<a href='javascript:void(0);' onClick='loadURL(\""+link+"\");' class='title' title='Internet' target='_blank' rel='external' >"+j+". " + thefeeds[i].title + "</a>";
 			//rssoutput+="<a class='btn btn-small' href='javascript:void(0);' onClick='loadURL(\""+link+"\");' > [>>>] </a>";
 			rssoutput+="<div class='well'>";		
-				rssoutput+="<div class='image'>"+image+"</div>";			
+				if (image) rssoutput+="<div class='image'>"+image+"</div>";
 				rssoutput+=thefeeds[i].contentSnippet;		
 			rssoutput+="</div>";		
 			rssoutput+='</div>';
@@ -367,15 +367,11 @@ function koniec(){
     }
 // =================================================================	
  
-	var scroll_position=0;
-	var scroll_step=10;
-	
-	function scrollNow(poz){
-		if (poz>0) {scroll_position=scroll_position+scroll_step;}
-		if (poz<0) {scroll_position=scroll_position-scroll_step;}
- 		window.scrollTo(0,scroll_position);
-		
-		}
+var showImages=true;
+
+function viewImages(){
+	if (showImages==true) showImages=false; else showImages=true;
+}
 
 	
  </script>
@@ -437,6 +433,7 @@ function koniec(){
 		<button onClick="onMenuKeyDown();" class="btn btn-primary">Menu</button> &nbsp;  
 		<button onClick="viewLSlinki(___self);" class="btn btn-danger">Linki</button> &nbsp;  
 		<button onClick="viewRemotelinki(___self);" class="btn">zURL</button> &nbsp;  
+		<button onClick="viewImages();" class="btn">img</button> &nbsp;  
  	<button onClick="gonext();"  class="btn btn-line" style="float:right;"><img src="pliki/arr-right.png" /></button> 
 </div>
 
