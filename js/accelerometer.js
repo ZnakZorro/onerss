@@ -12,11 +12,11 @@ var watchLastY=0;
 var watchLastZ=0;
 
 	var scroll_position=window.pageYOffset || 0;
-	var scroll_step=90;
+	var scroll_step=100;
 	var watchIle=0;
 	
 	function scrollNow(poz){
-	window.scrollBy(0,scroll_step * poz); watchIle=0; return;
+	//window.scrollBy(0,scroll_step * poz); watchIle=0; return;
 		{scroll_position=scroll_position+(scroll_step * poz);}
 		//console.log(scroll_position);
  		window.scrollTo(0,scroll_position);
@@ -54,9 +54,9 @@ var watchLastZ=0;
 		
 			//if (acceleration.z <3)  {vibrate();gonext(); return;}
 //acceleration.z=Math.random()*10;
-var zz=Math.round(acceleration.z * 100);			
+var zz=Math.round(acceleration.z * 10);	
+if (zz<10) zz='0'+zz;		
 var kolor='#'+zz+zz+zz;
-
 $('#pilot').style.backgroundColor=kolor;
 $('#pilot').innerHTML=(zz+'<br />'+kolor);
 			

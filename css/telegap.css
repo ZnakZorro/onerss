@@ -13,7 +13,7 @@ p.title {background:#eee; margin:0; padding:3px; border: 1px #DDD solid;}
 .wrapper {overflow: hidden;}
 #menu {}
 div.arty {}
-div.art {padding:8px; min-height:90px;background:#fff;}
+div.art {padding:8px; min-height:100px;background:#fff;}
 a.title {color:#258; font-size:102%; font-weight:bold; margin-top:2%;}
 div.art:nth-child(2n) {background-color: #f4f4f0;}
 div.hh1   {font-size:115%; min-height:30px; background:#248; color:white; padding:8px; margin:0;}
