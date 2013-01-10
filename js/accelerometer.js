@@ -55,9 +55,9 @@ var watchLastZ=0;
 //acceleration.z=Math.random()*10;
 var zz=Math.round(acceleration.z * 100);			
 var kolor='#'+zz+zz+zz;
-$('#title').style.color=kolor;
-$('#test').style.display='block';
-$('#test').innerHTML=(zz);
+
+$('#pilot').style.backgroundColor=kolor;
+$('#pilot').innerHTML=(zz+'<br />'+kolor);
 			
 			if (acceleration.z <4)  {graj('page.mp3'); gonext(); return;}
 		if (watchIle>4){
