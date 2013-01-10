@@ -15,9 +15,11 @@ function getPhoneGapPath() {
         function graj(src) {
 			src=getPhoneGapPath()+src;
             if (my_media == null) {
-                my_media = new Media(src, mediaonSuccess, mediaonError);
+                try {my_media = new Media(src, mediaonSuccess, mediaonError);}
+				catch(er){}
             } 
-            my_media.play();
+            try {my_media.play();}
+			catch(er){}
 		}
 
 

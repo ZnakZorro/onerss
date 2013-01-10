@@ -55,6 +55,7 @@ var ___self=false;
 var menuOpen=false;
 // The watch id references the current `watchAcceleration`
 var watchID = null;
+var showImages = window.localStorage.getItem('_showImages_') || 1;
 
 	google.load("feeds", "1");
 
@@ -68,6 +69,7 @@ var watchID = null;
     function onDeviceReady() {
 		try {if (device.uuid == ___moje) ___self=true;}
 		catch(er) {}
+
 
 
 		//document.getElementById('feeddiv').innerHTML='<h1>Czekamy</h1>';
@@ -87,9 +89,11 @@ var watchID = null;
         pokazFEED(czytajID());
 		document.getElementById("viewConfig").onclick=function(){viewConfig()};
 		
+		
+		
 		// font
-		var font_family = localStorage.getItem('_font_');
-		var font_size   = localStorage.getItem('_font_size_') || 15;
+		var font_family = window.localStorage.getItem('_font_');
+		var font_size   = window.localStorage.getItem('_font_size_') || 15;
 		if (font_size || font_family){
 			var sheet_font = document.createElement('style');
 			sheet_font.innerHTML = 'body {';
@@ -101,7 +105,8 @@ var watchID = null;
 		// --font	
 		
 	startWatch();
-		
+	if (showImages==0) $('#button_img').className='btn btn-warning'; else $('#button_img').className='btn btn-inverse';
+	
     }
 
    
@@ -266,7 +271,7 @@ function koniec(){
     function rssfeedsetup(id){
 		menuOpen=false;
 		zapiszID(id);
-		var godzin=localStorage.getItem('czas') || 24;
+		var godzin=window.localStorage.getItem('czas') || 24;
 		//console.log(godzin);
 	//if (id===undefined) id=0;
 		//console.log('rssfeedsetup id='+id);
@@ -290,8 +295,8 @@ function koniec(){
     	
  //=========================================================================   	
     function displayfeed(result){
-		var godzin=localStorage.getItem('czas') || 24;
-		var last=localStorage.getItem('last') || 0;
+		var godzin=window.localStorage.getItem('czas') || 24;
+		var last=window.localStorage.getItem('last') || 0;
 			var title=result.feed.title || 'Portal';	
 			if (sekcja!='WIZUT') {
 				//var arr=title.split(' '); arr=arr.slice(0,3); title=arr.join(' ');
@@ -336,7 +341,9 @@ function koniec(){
 					// czas  ostatnio -----------------------------------------
 			//console.log(thefeeds[i]);
 			var link  = korekta_link(thefeeds[i].link,thefeeds[i].content);
-			if (showImages) var image = szukaj_img(thefeeds[i].link,thefeeds[i].content); else var image=null;
+			var image=null;
+			if (showImages==1) {image = szukaj_img(thefeeds[i].link,thefeeds[i].content);}
+//console.log(showImages);console.log(image);			
 			rssoutput+='<div class="art">';
 			/*rssoutput+="<a href='javascript:void(0)' rel-title='" + thefeeds[i].title + "'  rel-link='" + link + "' rel-lokalizacja='"+result.feed.title+"' rel-sekcja='"+sekcja+"' onClick='popup_open(this);'>";
 				rssoutput+="<span class='btn btn-small pull-right czas'>" + toDate(thefeeds[i].publishedDate) + "</span>";
@@ -367,10 +374,13 @@ function koniec(){
     }
 // =================================================================	
  
-var showImages=true;
+
 
 function viewImages(){
-	if (showImages==true) showImages=false; else showImages=true;
+	if (showImages==1) showImages=0; else showImages=1;
+	if (showImages==0) $('#button_img').className='btn btn-warning'; else $('#button_img').className='btn btn-inverse';
+	//console.log(showImages);console.log($('#button_img'));
+	window.localStorage.setItem('_showImages_',showImages);
 }
 
 	
@@ -433,7 +443,7 @@ function viewImages(){
 		<button onClick="onMenuKeyDown();" class="btn btn-primary">Menu</button> &nbsp;  
 		<button onClick="viewLSlinki(___self);" class="btn btn-danger">Linki</button> &nbsp;  
 		<button onClick="viewRemotelinki(___self);" class="btn">zURL</button> &nbsp;  
-		<button onClick="viewImages();" class="btn">img</button> &nbsp;  
+		<button onClick="viewImages();" class="btn btn-inverse" id="button_img" >img</button> &nbsp;  
  	<button onClick="gonext();"  class="btn btn-line" style="float:right;"><img src="pliki/arr-right.png" /></button> 
 </div>
 
