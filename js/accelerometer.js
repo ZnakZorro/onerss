@@ -11,6 +11,15 @@ var watchLastX=0;
 var watchLastY=0;
 var watchLastZ=0;
 
+	var scroll_position=0;
+	var scroll_step=10;
+	
+	function scrollNow(poz){
+		if (poz>0) {scroll_position=scroll_position+scroll_step;}
+		if (poz<0) {scroll_position=scroll_position-scroll_step;}
+ 		window.scrollTo(0,scroll_position);
+		
+		}
 
     function startWatch() {
         var options = { frequency: 2000 };
@@ -42,6 +51,9 @@ var watchLastZ=0;
 			//if (suma > 9)  {gonext(); return;}
 		
 			//if (acceleration.z <3)  {vibrate();gonext(); return;}
+			
+			if (acceleration.z >7)  {scrollNow(-1)}
+			if (acceleration.z <6)  {scrollNow(1)}
 			if (acceleration.z <4)  {graj('page.mp3'); gonext(); return;}
 		
 			
