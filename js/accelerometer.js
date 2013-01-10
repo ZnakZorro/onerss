@@ -15,7 +15,7 @@ var watchLastZ=0;
 	var scroll_step=90;
 	
 	function scrollNow(poz){
-		if (poz>0) {scroll_position=scroll_position+scroll_step;}
+		if (poz>0) {scroll_position=scroll_position+scroll_step+scroll_step;}
 		if (poz<0) {scroll_position=scroll_position-scroll_step;}
 		//console.log(scroll_position);
  		window.scrollTo(0,scroll_position);
