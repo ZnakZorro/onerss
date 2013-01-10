@@ -199,6 +199,7 @@ function moveID(kier){
 		if (id>=idmax) id=0;
 		zapiszID(id);
 		rssfeedsetup(id);
+		scroll_position=0;
 	}
    	function goback() {
 		//graj('page-mini.mp3');
@@ -208,6 +209,7 @@ function moveID(kier){
 		if (id<0) id=idmax;
 		zapiszID(id);
 		rssfeedsetup(id);
+		scroll_position=0;
 	}
 
    	function goforwad() {

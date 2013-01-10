@@ -11,11 +11,12 @@ var watchLastX=0;
 var watchLastY=0;
 var watchLastZ=0;
 
-	var scroll_position=0;
+	var scroll_position=window.pageYOffset || 0;
 	var scroll_step=90;
 	var watchIle=0;
 	
 	function scrollNow(poz){
+	window.scrollBy(0,scroll_step * poz); watchIle=0; return;
 		{scroll_position=scroll_position+(scroll_step * poz);}
 		//console.log(scroll_position);
  		window.scrollTo(0,scroll_position);
