@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.onerss"
         versionCode="10" 
-        version   = "3.1.0">
+        version   = "3.1.1">
 
 
     <name>ZnakZorro-OneRSS</name>
@@ -35,6 +35,6 @@
 
 <access origin="*" onlyInBrowser="true" />
 <preference name="stay-in-webview" value="false" />
-<preference name="splash-screen-duration" value="3000" />	
+<preference name="splash-screen-duration" value="40000" />	
 
 </widget>

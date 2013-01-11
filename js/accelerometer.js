@@ -24,7 +24,7 @@ var watchLastZ=0;
 		}
 
     function startWatch() {
-        var options = { frequency: 2000 };
+        var options = { frequency: 1000 };
 		try {watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);}
 		catch(er){}
     }
@@ -57,16 +57,17 @@ var watchLastZ=0;
 var zz=Math.round(acceleration.z * 10);	
 if (zz<10) zz='0'+zz;		
 var kolor='#'+zz+zz+zz;
+$('#pilot').style.color='#ffffff';
 $('#pilot').style.backgroundColor=kolor;
 $('#pilot').innerHTML=(zz+'<br />'+kolor);
 			
-			if (acceleration.z <4)  {graj('page.mp3'); gonext(); return;}
-		if (watchIle>4){
-			if (acceleration.z >8)  {scrollNow(-1); return;}
-			if (acceleration.z <6)  {scrollNow(2); return;}
+			if (acceleration.z <3)  {graj('page.mp3'); gonext(); return;}
+		//if (watchIle>4){
+			if (acceleration.z >5 && acceleration.z <6)  {scrollNow(2); return;}
+			if (acceleration.z >8 && acceleration.z <9)  {scrollNow(-1); return;}
 			watchIle++;
-			if(watchIle>4) watchIle=0;
-		}
+			if (watchIle>4) watchIle=0;
+		//}
 		
 			
 			

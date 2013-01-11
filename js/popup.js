@@ -114,7 +114,7 @@ xmlhttp.send();
 //if (last) $('#zaznacz_czas').addClass('active'); else $('#kasuj_czas').addClass('active');
 	function zapiszLSlinki(title,link){
 		var max_links=14;
-		var get_linki=localStorage.getItem('_rss_linki');
+		var get_linki=window.localStorage.getItem('_rss_linki');
 		if (get_linki) {
 			var arr=JSON.parse(get_linki);
 			var ile=arr.length;
@@ -123,7 +123,7 @@ xmlhttp.send();
 		var store_linki=arr;	
 		arr.push({'title':title, 'link':link})
 		store_linki=JSON.stringify(store_linki);
-		localStorage.setItem('_rss_linki',store_linki);
+		window.localStorage.setItem('_rss_linki',store_linki);
 	}
 	
 	function viewRemotelinki(___self){
@@ -132,7 +132,7 @@ xmlhttp.send();
 	}
 	
 	function viewLSlinki(___self){
-		var get_linki = localStorage.getItem('_rss_linki');
+		var get_linki = window.localStorage.getItem('_rss_linki');
 		var arr=JSON.parse(get_linki);
 		if (!arr) return false;
 		var html='<ol>';
@@ -148,8 +148,8 @@ xmlhttp.send();
 	
 
 function viewConfig(){
-		var font = localStorage.getItem('_font_');
-		var font_size = localStorage.getItem('_font_size_');
+		var font = window.localStorage.getItem('_font_');
+		var font_size = window.localStorage.getItem('_font_size_');
 		//console.log(font_size+' '+font);
 		var ff=[];
 		var fs=[];
@@ -187,11 +187,11 @@ function viewConfig(){
 		if (!font) font='Arial';
 		//if (!size) size=15;
 		if (font != '*') {
-			//if (!font) localStorage.removeItem('_font_');
-			if (font)  localStorage.setItem('_font_',font);
+			//if (!font) window.localStorage.removeItem('_font_');
+			if (font)  window.localStorage.setItem('_font_',font);
 		}
-		if (size) {localStorage.setItem('_font_size_',size);}
-		location.reload();
+		if (size) {window.localStorage.setItem('_font_size_',size);}
+		window.location.reload();
 	}
 
 	
@@ -205,8 +205,8 @@ function viewConfig(){
 		if (czas) {
 		//console.log(czas);
 			kasuj_czas();
-			localStorage.setItem('czas',czas);
-			location.reload();
+			window.localStorage.setItem('czas',czas);
+			window.location.reload();
 		}
 	}
 	
@@ -214,12 +214,12 @@ function viewConfig(){
 	function zaznacz_czas() {
 		var teraz = new Date();
 		var mteraz=Date.parse(teraz);
-		localStorage.setItem('last',mteraz);
-		location.reload();
+		window.localStorage.setItem('last',mteraz);
+		window.location.reload();
 	}
 	
 	function kasuj_czas() {
-		localStorage.removeItem('last');
-		location.reload();
+		window.localStorage.removeItem('last');
+		window.location.reload();
 	}
 	

@@ -106,11 +106,17 @@ rssy[x].push({title:'ZUT pracownicy' ,url:'http://www.zut.edu.pl/rssfeed-pracown
 
 // Zapas
 x++; rssy[x]=[];		sekcje[x]='Zapas';	kolory[x]='#39b';
+//rssy[x].push({title:'' ,url:'',limit:10});
+
 rssy[x].push({title:'Wyborcza.biz' ,url:'http://wyborcza.biz/pub/rss/wyborcza_biz_wiadomosci.htm',limit:10});
 rssy[x].push({title:'PulsBiznesu' ,url:'http://www.pb.pl/atom',limit:10});
 rssy[x].push({title:'YankoDesign' ,url:'http://feeds.feedburner.com/yankodesign',limit:10});
 rssy[x].push({title:'TrenDir' ,url:'http://www.trendir.com/atom.xml',limit:10});
 
+rssy[x].push({title:'PrzepisyNET' ,url:'http://feeds.feedburner.com/PrzepisyNET',limit:10});
+rssy[x].push({title:'ugotuj.to' ,url:'http://ugotuj.to/pub/rss/ugotujto.htm',limit:10});
+rssy[x].push({title:'Gotuj.pl' ,url:'http://gotuj.pl/rss',limit:10});
+rssy[x].push({title:'kotlet.tv' ,url:'http://kotlet.tv/feed',limit:10});
 //rssy[x].push({title:'' ,url:'',limit:10});
 //rssy[x].push({title:'' ,url:'',limit:10});
 

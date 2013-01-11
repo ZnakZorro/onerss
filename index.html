@@ -26,7 +26,7 @@
 	article {
 		width: 47.95%;
 	}
-	div.hh1 {font-size:110%; line-height:110%;}
+	div.hh1 {font-size:115%; line-height:110%;}
 }	
 	
 @media (max-width:638px){
@@ -105,7 +105,8 @@ var showImages = window.localStorage.getItem('_showImages_') || 1;
 		// --font	
 		
 	startWatch();
-	if (showImages==0) $('#button_img').className='btn btn-warning'; else $('#button_img').className='btn btn-inverse';
+	if (showImages==0) $('#button_img').className='btn btn-mini btn-warning'; else $('#button_img').className='btn btn-mini btn-inverse';
+	
 	
     }
 
@@ -125,6 +126,7 @@ var showImages = window.localStorage.getItem('_showImages_') || 1;
     }
 	
 	function onOffline() {
+		stopWatch();
 		///////////////
 		navigator.notification.alert(
 		'You are the winner!',  // message
@@ -200,6 +202,7 @@ function moveID(kier){
 		zapiszID(id);
 		rssfeedsetup(id);
 		scroll_position=0;
+		zapal();
 	}
    	function goback() {
 		//graj('page-mini.mp3');
@@ -210,6 +213,7 @@ function moveID(kier){
 		zapiszID(id);
 		rssfeedsetup(id);
 		scroll_position=0;
+		zapal();
 	}
 
    	function goforwad() {
@@ -274,16 +278,16 @@ function koniec(){
 		menuOpen=false;
 		zapiszID(id);
 		var godzin=window.localStorage.getItem('czas') || 24;
-		//console.log(godzin);
+		$('#h'+godzin).className='btn btn-mini active';
+		var last=window.localStorage.getItem('last') || 0;
+		if (last>0) $('#zaznacz_czas').className='btn btn-mini active'; else $('#kasuj_czas').className='btn btn-mini active';
 	//if (id===undefined) id=0;
-		//console.log('rssfeedsetup id='+id);
     	//document.getElementById('test').innerHTML+='rss '+id+' '+opiszID();
 		kasuj();
 		//document.getElementById("feeddiv").innerHTML='<h1 class="hh1" style="background:'+kolory[id]+'">'+sekcje[id]+'</h1>';
 		
 		document.getElementById("feeddiv").innerHTML='<h2 id="title"><button onClick="gonext();"  class="btn btn-next"> \u00BB  </button> '+sekcje[id]+' / '+godzin+'h</h2>';
 		for(var i in rssy[id]) {
-		//console.log(i);
 			var v = rssy[id][i].url;
 			var feedlimit=rssy[id][i].limit || 6;
 			var j=parseInt(i)+1;
@@ -324,9 +328,7 @@ function koniec(){
 		var rssoutput='<div class="arty box">';
 		var j=0;
 		var ilefeeds=thefeeds.length;
-		//console.log(rssy[id]);
 		//var ftitle=rssy[id][i].title;
-		//console.log(id+' '+i+' '+ftitle);
 
 		for (var i=0; i<ilefeeds; i++) {
 			j=i+1;
@@ -337,7 +339,6 @@ function koniec(){
 					// ostatnio
 					var rssczas = new Date(thefeeds[i].publishedDate);
 					var teraz=Date.parse(rssczas);
-					//console.log(last+'-'+teraz);
 					if (last>teraz) continue;
 
 					// czas  ostatnio -----------------------------------------
@@ -380,9 +381,10 @@ function koniec(){
 
 function viewImages(){
 	if (showImages==1) showImages=0; else showImages=1;
-	if (showImages==0) $('#button_img').className='btn btn-warning'; else $('#button_img').className='btn btn-inverse';
+	if (showImages==0) $('#button_img').className='btn btn-mini btn-warning'; else $('#button_img').className='btn btn-mini btn-inverse';
 	//console.log(showImages);console.log($('#button_img'));
 	window.localStorage.setItem('_showImages_',showImages);
+	window.location.reload();
 }
 
 	
@@ -445,11 +447,12 @@ function viewImages(){
 -->
    
 <div id="menufooter" style="position:fixed; left:0px; bottom:0px; background:#222; float:left; width:96%; padding:0.1% 2%; margin:0; opacity:0.8;z-index:2;border-top:1px solid #444;">
- 	<button onClick="goback();"  class="btn btn-line" style="float:left;"><img src="pliki/arr-left.png" /></button>  &nbsp;  &nbsp; 
-		<button onClick="onMenuKeyDown();" class="btn btn-primary">Menu</button> &nbsp;  
-		<button onClick="viewLSlinki(___self);" class="btn btn-danger">Linki</button> &nbsp;  
-		<button onClick="viewRemotelinki(___self);" class="btn">zURL</button> &nbsp;  
-		<button onClick="viewImages();" class="btn btn-inverse" id="button_img" >img</button> &nbsp; 
+ 	<button onClick="goback();"  class="btn btn-line" style="float:left;"><img src="pliki/arr-left.png" /></button>
+		<button onClick="onMenuKeyDown();" class="btn btn-primary">Menu</button>
+		<button onClick="viewLSlinki(___self);" class="btn btn-danger">Linki</button>
+		<button onClick="viewRemotelinki(___self);" class="btn">zURL</button>
+		<button onClick="viewImages();" class="btn btn-mini btn-inverse" id="button_img" >img</button>
+		<button onClick="window.location.reload();" class="btn btn-mini btn-primary">&#x21D5;</button> 
 
 
 
@@ -473,7 +476,7 @@ function viewImages(){
 		<div id="popup_footer"> <a href="javascript:void(0)" class="btn btn-danger"  onClick="popup_close();">Close</a></div>
 </div>
 
-<div id="pilot">[::]</div>
+<div id="pilot">&#x21D5;</div>
 <!--	
 <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://strona.pl" data-text="tytul" data-via="znakzorro" data-lang="pl" data-count="none">Tweetnij</a>
 <br /><br /><br /><br />
