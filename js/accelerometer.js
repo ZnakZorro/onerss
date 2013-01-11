@@ -58,8 +58,10 @@ var watchLastZ=0;
 var zz=Math.round(acceleration.z * 10);	
 if (zz<10) zz='0'+zz;		
 //var kolor='#'+zz+zz+zz;
-var kolor='#dddddd';
+var kolor='#888888';
+			if (acceleration.z >4 && acceleration.z <5)  {kolor='#aaaaff'}
 			if (acceleration.z >5 && acceleration.z <6)  {kolor='#0000ff'}
+			if (acceleration.z >7 && acceleration.z <8)  {kolor='#ffaaaa'}
 			if (acceleration.z >8 && acceleration.z <9)  {kolor='#ff0000'}
 
 $('#pilot').style.color='#ffffff';
