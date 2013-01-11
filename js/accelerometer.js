@@ -24,7 +24,7 @@ var watchLastZ=0;
 		}
 
     function startWatch() {
-        var options = { frequency: 1000 };
+        var options = { frequency: 2000 };
 		try {watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);}
 		catch(er){}
     }
@@ -59,7 +59,7 @@ if (zz<10) zz='0'+zz;
 var kolor='#'+zz+zz+zz;
 $('#pilot').style.color='#ffffff';
 $('#pilot').style.backgroundColor=kolor;
-$('#pilot').innerHTML=(zz+'<br />'+kolor);
+$('#pilot').innerHTML=(zz+'<br />'+scroll_position);
 			
 			if (acceleration.z <3)  {graj('page.mp3'); gonext(); return;}
 		//if (watchIle>4){
