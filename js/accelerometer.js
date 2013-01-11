@@ -18,6 +18,7 @@ var watchLastZ=0;
 	function scrollNow(poz){
 	//window.scrollBy(0,scroll_step * poz); watchIle=0; return;
 		{scroll_position=scroll_position+(scroll_step * poz);}
+		if (scroll_position<0) {scroll_position=0; return;}
 		//console.log(scroll_position);
  		window.scrollTo(0,scroll_position);
 		watchIle=0;
@@ -56,7 +57,11 @@ var watchLastZ=0;
 //acceleration.z=Math.random()*10;
 var zz=Math.round(acceleration.z * 10);	
 if (zz<10) zz='0'+zz;		
-var kolor='#'+zz+zz+zz;
+//var kolor='#'+zz+zz+zz;
+var kolor='#dddddd';
+			if (acceleration.z >5 && acceleration.z <6)  {kolor='#0000ff'}
+			if (acceleration.z >8 && acceleration.z <9)  {kolor='#ff0000'}
+
 $('#pilot').style.color='#ffffff';
 $('#pilot').style.backgroundColor=kolor;
 $('#pilot').innerHTML=(zz+'<br />'+scroll_position);
