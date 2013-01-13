@@ -9,7 +9,8 @@
  	<link rel="stylesheet" href="css/bootstrap.mi.css">
 	<link rel="stylesheet" href="css/telegap.css">
 <style>
-#pilot {position:fixed; right:1px; top:10px;padding:2px; border:1px solid gray; background:silver;}
+#pilot {display:none; position:fixed; right:1px; top:10px; padding:2px; border:1px solid gray; background:#f8f8f8;}
+
 	article {
 		width: 22.95%;
 		float: left;
@@ -417,16 +418,16 @@ function viewImages(){
 	
 		<div class="batony" id="strefa_czasu">
 		<button onClick="zaznacz_czas();"            class="h btn btn-mini btn-primary" id="zaznacz_czas" >0</button>
-		<button onClick="ustawCzas(this);" rel="6"   class="h btn btn-mini btn-inverse" id="h6"   title="do 6 godzin"> 6h </button> 
-		<button onClick="ustawCzas(this);" rel="12"  class="h btn btn-mini btn-inverse" id="h12"  title="do 12 godzin"> 12h </button> 
-		<button onClick="ustawCzas(this);" rel="24"  class="h btn btn-mini btn-inverse" id="h24"  title="ostatnia doba"> 1d </button> 
-		<button onClick="ustawCzas(this);" rel="168" class="h btn btn-mini btn-inverse" id="h168" title="ostatni tydzień"> 7d </button>
-		<button onClick="ustawCzas(this);" rel="0"   class="h btn btn-mini btn-inverse" id="h0"   title="infinity"> &infin; </button>
-		<button onClick="kasuj_czas();"              class="h btn btn-mini btn-danger"  id="kasuj_czas"    >all</button>
-	
+		<button onClick="ustawCzas(this);" rel="6"   class="h btn btn-mini btn-inverse" id="h6"   title="do 6 godzin">6h</button> 
+		<button onClick="ustawCzas(this);" rel="12"  class="h btn btn-mini btn-inverse" id="h12"  title="do 12 godzin">12h</button> 
+		<button onClick="ustawCzas(this);" rel="24"  class="h btn btn-mini btn-inverse" id="h24"  title="ostatnia doba">1d</button> 
+		<button onClick="ustawCzas(this);" rel="168" class="h btn btn-mini btn-inverse" id="h168" title="ostatni tydzień">7d</button>
+		<button onClick="ustawCzas(this);" rel="0"   class="h btn btn-mini btn-inverse" id="h0"   title="infinity">&infin;</button>
+		<button onClick="kasuj_czas();"              class="h btn btn-mini btn-danger"  id="kasuj_czas">all</button>
+		<!--
 			<button onClick="scrollNow(-1);" class="btn btn-inverse" >-1</button> &nbsp; 
 			<button onClick="scrollNow(1);" class="btn btn-inverse" >+1</button> &nbsp; 
-
+		-->
 	</div>	
 
 	

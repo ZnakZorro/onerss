@@ -64,14 +64,14 @@ var kolor='#888888';
 			if (acceleration.z >7 && acceleration.z <8)  {kolor='#ffaaaa'}
 			if (acceleration.z >8 && acceleration.z <9)  {kolor='#ff0000'}
 
-$('#pilot').style.color='#ffffff';
-$('#pilot').style.backgroundColor=kolor;
-$('#pilot').innerHTML=(zz+'<br />'+scroll_position);
+//$('#pilot').style.color='#ffffff';
+//$('#pilot').style.backgroundColor=kolor;
+//$('#pilot').innerHTML=(zz+'<br />'+scroll_position);
 			
 			if (acceleration.z <3)  {graj('page.mp3'); gonext(); return;}
 		//if (watchIle>4){
-			if (acceleration.z >5 && acceleration.z <6)  {scrollNow(2); return;}
-			if (acceleration.z >8 && acceleration.z <9)  {scrollNow(-1); return;}
+			//if (acceleration.z >5 && acceleration.z <6)  {scrollNow(2); return;}
+			//if (acceleration.z >8 && acceleration.z <9)  {scrollNow(-1); return;}
 			watchIle++;
 			if (watchIle>4) watchIle=0;
 		//}

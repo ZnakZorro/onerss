@@ -106,7 +106,7 @@ rssy[x].push({title:'ZUT pracownicy' ,url:'http://www.zut.edu.pl/rssfeed-pracown
 
 // Zapas
 x++; rssy[x]=[];		sekcje[x]='Zapas';	kolory[x]='#39b';
-//rssy[x].push({title:'' ,url:'',limit:10});
+rssy[x].push({title:'studioopinii.pl' ,url:'http://studioopinii.pl/feed/',limit:10});
 
 rssy[x].push({title:'Wyborcza.biz' ,url:'http://wyborcza.biz/pub/rss/wyborcza_biz_wiadomosci.htm',limit:10});
 rssy[x].push({title:'PulsBiznesu' ,url:'http://www.pb.pl/atom',limit:10});

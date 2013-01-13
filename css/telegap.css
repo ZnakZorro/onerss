@@ -41,14 +41,9 @@ table.traffic tr.sectiontableheader {background:#444; color:#fff;}
 .box {/*-webkit-border-radius:9px 9px 9px 9px; border-radius:9px 9px 9px 9px;*/}
 #title {text-align:center;color:white; padding:10px 5px; margin:0; background:#248; height:35px;}
 
-
-
-
 .btn-line {line-height:0 !important; padding:4px 8px !important;}
 .btn-next {float:left; line-height:20px;font-size:23px; font-weight:bold;}
-div#menu .btn {min-width:5em;}
-
-
+div#menu .btn {min-width:4em;}
 
 #popup {display:none; background:#ddd; border:2px solid #444; padding:2px; position:fixed; top:40px; left:5%; width:90%; margin:0;}
 #popup #popup_body {background:white; padding:0; min-height:150px;line-height:160%;}
