@@ -11,6 +11,8 @@ rssy[x].push({title:'Szczecin Radio',url:'http://www.radioszczecin.pl/rss.php?id
 rssy[x].push({title:'Szczecin.eu',url:'http://www.szczecin.eu/rss.xml',limit:5});	
 rssy[x].push({title:'mmSzczecin',url:'http://www.mmszczecin.pl/rss/news.xml',limit:10});	
 rssy[x].push({title:'wSzczecinie',url:'http://www.wszczecinie.pl/rss/news.xml',limit:10});	
+rssy[x].push({title:'Muza',url:'http://www.muza.szczecin.pl/index.php/kalendarium-koncertow/eventlist?format=feed&type=atom',limit:10});	
+
 
 
 
