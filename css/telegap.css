@@ -14,7 +14,7 @@ p.title {background:#eee; margin:0; padding:3px; border: 1px #DDD solid;}
 #menu {}
 div.arty {}
 div.art {padding:6px; min-height:66px;background:#fff;}
-.well     {min-height:24px;}
+.well     {min-height:60px;}
 a.title {color:#258; font-size:102%; font-weight:bold; margin-top:2%;}
 div.art:nth-child(2n) {background-color: #f4f4f0;}
 div.hh1   {font-size:115%; min-height:30px; background:#248; color:white; padding:8px; margin:0;}
