@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.onerss"
         versionCode="10" 
-        version   = "3.1.1">
+        version   = "3.3.0">
 
 
     <name>ZnakZorro-OneRSS</name>
@@ -20,11 +20,11 @@
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
 	
-<icon src="pliki/icon-72.png" />
+<icon src="pliki/icon-96.png" />
 <icon src="pliki/icon-36.png" gap:platform="android" gap:density="ldpi" />
-<icon src="pliki/icon-72.png" gap:platform="android" gap:density="mdpi" />
-<icon src="pliki/icon-144.png" gap:platform="android" gap:density="hdpi" />
-<icon src="pliki/icon-144.png" gap:platform="android" gap:density="xhdpi" />
+<icon src="pliki/icon-96.png" gap:platform="android" gap:density="mdpi" />
+<icon src="pliki/icon-96.png" gap:platform="android" gap:density="hdpi" />
+<icon src="pliki/icon-96.png" gap:platform="android" gap:density="xhdpi" />
     <gap:splash src="pliki/onerss.png"  gap:platform="android" gap:density="ldpi" />
     <gap:splash src="pliki/onerss.png"  gap:platform="android" gap:density="mdpi" />
     <gap:splash src="pliki/onerss.png"  gap:platform="android" gap:density="hdpi" />
@@ -35,6 +35,6 @@
 
 <access origin="*" onlyInBrowser="true" />
 <preference name="stay-in-webview" value="false" />
-<preference name="splash-screen-duration" value="4000" />	
+<preference name="splash-screen-duration" value="3000" />	
 
 </widget>

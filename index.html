@@ -11,6 +11,8 @@
 <style>
 #pilot {display:none; position:fixed; right:1px; top:10px; padding:2px; border:1px solid gray; background:#f8f8f8;}
 
+
+
 	article {
 		width: 22.95%;
 		float: left;
@@ -38,7 +40,12 @@
 	}	
 	
 }
+
 #infotest {display:block;}
+.art.imag {min-height:68px;}
+.art.Allegro.imag {min-height:70px;}
+
+
 </style>		
     	
 	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
@@ -47,7 +54,7 @@
  	<script type="text/javascript" charset="utf-8" src="cordova-2.2.0.js"></script>
  	<script type="text/javascript" charset="utf-8" src="js/telegap.js"></script>
  	<script type="text/javascript" charset="utf-8" src="js/popup.js"></script>
- 	<script type="text/javascript" charset="utf-8" src="js/accelerometer.js"></script>
+ 	<!--script type="text/javascript" charset="utf-8" src="js/accelerometer.js"></script-->
  	<script type="text/javascript" charset="utf-8" src="js/media.js"></script>
  	
 <script type="text/javascript" charset="utf-8">
@@ -108,7 +115,7 @@ var showImages = window.localStorage.getItem('_showImages_') || 1;
 			}
 		// --font	
 		
-	startWatch();
+	//startWatch();
 	if (showImages==0) $('#button_img').className='btn btn-mini btn-warning'; else $('#button_img').className='btn btn-mini btn-inverse';
 	
 
@@ -118,12 +125,12 @@ var showImages = window.localStorage.getItem('_showImages_') || 1;
 
    
     function onResume() {
-		startWatch();
+		//startWatch();
 		//document.getElementById('test').innerHTML='onResume<br />';
     }
 	
     function onPause() {
-		stopWatch();
+		//stopWatch();
 		//document.getElementById('test').innerHTML='onPause<br />';
     }
 	
@@ -132,7 +139,7 @@ var showImages = window.localStorage.getItem('_showImages_') || 1;
     }
 	
 	function onOffline() {
-		stopWatch();
+		//stopWatch();
 		///////////////
 		navigator.notification.alert(
 		'You are the winner!',  // message
@@ -335,7 +342,9 @@ function koniec(){
 		var j=0;
 		var ilefeeds=thefeeds.length;
 		//var ftitle=rssy[id][i].title;
+var klasa=sekcja;
 
+			
 		for (var i=0; i<ilefeeds; i++) {
 			j=i+1;
 					// czas  -----------------------------------------
@@ -352,8 +361,9 @@ function koniec(){
 			var link  = korekta_link(thefeeds[i].link,thefeeds[i].content);
 			var image=null;
 			if (showImages==1) {image = szukaj_img(thefeeds[i].link,thefeeds[i].content);}
+if (image) klasa+=' imag';			
 //console.log(showImages);console.log(image);			
-			rssoutput+='<div class="art">';
+			rssoutput+='<div class="art '+klasa+'">';
 			/*rssoutput+="<a href='javascript:void(0)' rel-title='" + thefeeds[i].title + "'  rel-link='" + link + "' rel-lokalizacja='"+result.feed.title+"' rel-sekcja='"+sekcja+"' onClick='popup_open(this);'>";
 				rssoutput+="<span class='btn btn-small pull-right czas'>" + toDate(thefeeds[i].publishedDate) + "</span>";
 			rssoutput+="</a>";*/
@@ -408,12 +418,12 @@ function viewImages(){
    <div id="menu" style="width:100%; display:none; position:fixed; left:0; bottom:49px; background:#888; padding:2px; z-index:2;border-top:1px solid #444;"> 
   	<button onClick="pokazFEED(0);" class="btn btn-info">Szczecin</button>
   	<button onClick="pokazFEED(1);" class="btn btn-info">Wiadomosci</button>
-  	<button onClick="pokazFEED(2);" class="btn btn-inverse">Portale</button>
+  	<button onClick="pokazFEED(2);" class="btn btn-info">Portale</button>
   	<button onClick="pokazFEED(3);" class="btn btn-info">InfoTech</button>
   	<button onClick="pokazFEED(4);" class="btn btn-primary">Dzone</button>
   	<button onClick="pokazFEED(5);" class="btn btn-primary">WebDev</button>
   	<button onClick="pokazFEED(6);" class="btn btn-primary">Code</button>
-  	<button onClick="pokazFEED(7);" class="btn btn-inverse">Allegro</button>	
+  	<button onClick="pokazFEED(7);" class="btn btn-warning">Allegro</button>	
   	<button onClick="pokazFEED(8);" class="btn btn-success">WIZUT</button>
   	<button onClick="pokazFEED(9);" class="btn btn-inverse">Zapas</button>
  	<button onClick="viewInfo();"   class="btn btn-warning">InfoSzczecin</button>	
@@ -424,6 +434,7 @@ function viewImages(){
 		<div class="batony" id="strefa_czasu">
 		<button onClick="zaznacz_czas();"            class="h btn btn-mini btn-primary" id="zaznacz_czas" >0</button>
 		<button onClick="ustawCzas(this);" rel="6"   class="h btn btn-mini btn-inverse" id="h6"   title="do 6 godzin">6h</button> 
+		<button onClick="ustawCzas(this);" rel="8"   class="h btn btn-mini btn-inverse" id="h8"   title="do 8 godzin">8h</button> 
 		<button onClick="ustawCzas(this);" rel="12"  class="h btn btn-mini btn-inverse" id="h12"  title="do 12 godzin">12h</button> 
 		<button onClick="ustawCzas(this);" rel="24"  class="h btn btn-mini btn-inverse" id="h24"  title="ostatnia doba">1d</button> 
 		<button onClick="ustawCzas(this);" rel="168" class="h btn btn-mini btn-inverse" id="h168" title="ostatni tydzień">7d</button>
@@ -452,17 +463,13 @@ function viewImages(){
   	<input type="button"  class="btn2 btn-info" onClick="podzielsie3();" value="Share3" />
 -->
    
-<div id="menufooter" style="position:fixed; left:0px; bottom:0px; background:#222; float:left; width:96%; padding:0.1% 2%; margin:0; opacity:0.8;z-index:2;border-top:1px solid #444;">
+<div id="menufooter" style="position:fixed; left:0px; bottom:0px; background:#333; float:left; width:100%; padding:4px 0; margin:0; opacity:0.9;z-index:2;">
  	<button onClick="goback();"  class="btn btn-line" style="float:left;"><img src="pliki/arr-left.png" /></button>
 		<button onClick="onMenuKeyDown();" class="btn btn-primary">Menu</button>
 		<button onClick="viewLSlinki(___self);" class="btn btn-danger">Linki</button>
 		<button onClick="viewRemotelinki(___self);" class="btn">zURL</button>
 		<button onClick="viewImages();" class="btn btn-mini btn-inverse" id="button_img" >img</button>
-		<button onClick="window.location.reload();" class="btn btn-mini btn-primary">&#x21D5;</button> 
-
-
-
-		
+		<button onClick="window.location.reload();" class="btn btn-mini btn-primary">&#x21D5;</button> 		
  	<button onClick="gonext();"  class="btn btn-line" style="float:right;"><img src="pliki/arr-right.png" /></button> 
 </div>
 

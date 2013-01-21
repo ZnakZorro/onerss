@@ -30,7 +30,6 @@ x++; rssy[x]=[];		sekcje[x]='Portale';	kolory[x]='#872657';
 rssy[x].push({title:'Interia' ,url:'http://kanaly.rss.interia.pl/fakty.xml',limit:8});	
 rssy[x].push({title:'WP' ,url:'http://wiadomosci.wp.pl/kat,1329,ver,rss,rss.xml',limit:8});	
 rssy[x].push({title:'TVN24' ,url:'http://www.tvn24.pl/najnowsze.xml',limit:8});	
-	
 rssy[x].push({title:'ŚwiatCzytników' ,url:'http://rss.swiatczytnikow.pl/SwiatCzytnikow',limit:6});	
 rssy[x].push({title:'RadioM' ,url:'http://www.radiomaryja.pl/feed/',limit:6});	
 //rssy[x].push({title:'' ,url:'',limit:9});	
@@ -67,7 +66,7 @@ rssy[x].push({title:'html5rocks',url:'http://feeds.feedburner.com/html5rocks',li
 rssy[x].push({title:'Codrops',url:'http://feeds2.feedburner.com/tympanus',limit:6,color:'#eee'});
 rssy[x].push({title:'WDWall',url:'http://feeds2.feedburner.com/WebDesignerWall',limit:6,color:'#eee'});
 rssy[x].push({title:'Smashing',url:'http://rss1.smashingmagazine.com/feed/',limit:6,color:'#eee'});	
-rssy[x].push({title:'Mashable',url:'http://feeds.mashable.com/Mashable',limit:10,color:'#eee'});	
+//rssy[x].push({title:'Mashable',url:'http://feeds.mashable.com/Mashable',limit:10,color:'#eee'});	
 
 
 
