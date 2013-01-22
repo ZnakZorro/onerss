@@ -139,7 +139,7 @@ xmlhttp.send();
 		arr.reverse();
 		for (var i in arr) {
 			//html+='<li><a href="'+arr[i].link+'">'+arr[i].title+'</a></li>';
-			html+='<li><a href="javascript:void()" onClick="window.open(\''+arr[i].link+'\')">'+arr[i].title+'</a></li>';
+			html+='<li><a href="javascript:void()" onClick="loadURL(\''+arr[i].link+'\')">'+arr[i].title+'</a></li>';
 		}
 		html+='</ol>';
 		document.getElementById('popup').style.display='block';
