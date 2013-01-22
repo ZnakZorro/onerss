@@ -58,14 +58,14 @@
  	<script type="text/javascript" charset="utf-8" src="js/media.js"></script>
  	
 <script type="text/javascript" charset="utf-8">
-var ___moje='eede2de857491ec7';
-var ___self=false;
-var menuOpen=false;
+var x___moje = 'eede2de857491ec7';
+var x___self = false;
+var menuOpen = false;
 // The watch id references the current `watchAcceleration`
 var watchID = null;
 var showImages = window.localStorage.getItem('_showImages_') || 1;
 
-	google.load("feeds", "1");
+	google.load("feeds","1");
 
     function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
@@ -75,10 +75,10 @@ var showImages = window.localStorage.getItem('_showImages_') || 1;
 
 	
     function onDeviceReady() {
-		try {if (device.uuid == ___moje) ___self=true;}
+		try {if (device.uuid == x___moje) x___self=true;}
 		catch(er) {
 			//console.log(navigator.userAgent);
-			if (window.localStorage.getItem('___self___')=='ZnakZorro') ___self=true;
+			if (window.localStorage.getItem('x___self___')=='ZnakZorro') x___self=true;
 		}
 
 
@@ -466,8 +466,8 @@ function viewImages(){
 <div id="menufooter" style="position:fixed; left:0px; bottom:0px; background:#333; float:left; width:100%; padding:4px 0; margin:0; opacity:0.9;z-index:2;">
  	<button onClick="goback();"  class="btn btn-line" style="float:left;"><img src="pliki/arr-left.png" /></button>
 		<button onClick="onMenuKeyDown();" class="btn btn-primary">Menu</button>
-		<button onClick="viewLSlinki(___self);" class="btn btn-danger">Linki</button>
-		<button onClick="viewRemotelinki(___self);" class="btn">zURL</button>
+		<button onClick="viewLSlinki(x___self);" class="btn btn-danger">Linki</button>
+		<button onClick="viewRemotelinki(x___self);" class="btn">zURL</button>
 		<button onClick="viewImages();" class="btn btn-mini btn-inverse" id="button_img" >img</button>
 		<button onClick="window.location.reload();" class="btn btn-mini btn-primary">&#x21D5;</button> 		
  	<button onClick="gonext();"  class="btn btn-line" style="float:right;"><img src="pliki/arr-right.png" /></button> 
