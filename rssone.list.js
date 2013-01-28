@@ -55,6 +55,7 @@ rssy[x].push({title:'JavaSript',url:'http://www.dzone.com/links/feed/frontpage/j
 rssy[x].push({title:'Frontpage',url:'http://feeds.dzone.com/dzone/frontpage',limit:6,color:'#eee'});	
 rssy[x].push({title:'Html5',url:'http://dzone.com/mz/html5/rss',limit:6,color:'#eee'});	
 rssy[x].push({title:'Queue',url:'http://www.dzone.com/links/feed/queue/rss.xml',limit:6,color:'#eee'});	
+rssy[x].push({title:'Dzon.css',url:'http://feeds.dzone.com/zones/css',limit:6,color:'#eee'});	
 
 
 
@@ -78,7 +79,6 @@ rssy[x].push({title:'JSclass'   ,url:'http://feeds.feedburner.com/jsclasses-xml'
 rssy[x].push({title:'Mootools'  ,url:'http://mootools.net/forge/feed/recent',limit:6,color:'#eef'});	
 rssy[x].push({title:'CSStricks',url:'http://feeds.feedburner.com/CssTricks',limit:6,color:'#eee'});	
 rssy[x].push({title:'dailyjs',url:'http://feeds.feedburner.com/dailyjs',limit:6,color:'#eee'});	
-
 
 
 
