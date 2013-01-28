@@ -66,7 +66,7 @@ rssy[x].push({title:'html5rocks',url:'http://feeds.feedburner.com/html5rocks',li
 rssy[x].push({title:'Codrops',url:'http://feeds2.feedburner.com/tympanus',limit:6,color:'#eee'});
 rssy[x].push({title:'WDWall',url:'http://feeds2.feedburner.com/WebDesignerWall',limit:6,color:'#eee'});
 rssy[x].push({title:'Smashing',url:'http://rss1.smashingmagazine.com/feed/',limit:6,color:'#eee'});	
-//rssy[x].push({title:'Mashable',url:'http://feeds.mashable.com/Mashable',limit:10,color:'#eee'});	
+rssy[x].push({title:'DevGirl',url:'http://devgirl.org/feed/',limit:10,color:'#eee'});	
 
 
 
