@@ -19,7 +19,7 @@
 		margin: 1%;
 	}
 	
-@media (max-width:1278px){
+@media (max-width:1439px){
 	article {
 		width: 30.95%;
 	}
@@ -61,6 +61,8 @@
 var x___moje = 'eede2de857491ec7';
 var x___self = false;
 var menuOpen = false;
+var zaladowany=false;
+
 // The watch id references the current `watchAcceleration`
 var watchID = null;
 var showImages = window.localStorage.getItem('_showImages_') || 1;
@@ -75,6 +77,8 @@ var showImages = window.localStorage.getItem('_showImages_') || 1;
 
 	
     function onDeviceReady() {
+			if (zaladowany) return true;
+			zaladowany=true;
 		try {if (device.uuid == x___moje) x___self=true;}
 		catch(er) {
 			//console.log(navigator.userAgent);
