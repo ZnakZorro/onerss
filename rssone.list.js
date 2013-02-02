@@ -79,6 +79,8 @@ rssy[x].push({title:'JSclass'   ,url:'http://feeds.feedburner.com/jsclasses-xml'
 rssy[x].push({title:'Mootools'  ,url:'http://mootools.net/forge/feed/recent',limit:6,color:'#eef'});	
 rssy[x].push({title:'CSStricks',url:'http://feeds.feedburner.com/CssTricks',limit:6,color:'#eee'});	
 rssy[x].push({title:'dailyjs',url:'http://feeds.feedburner.com/dailyjs',limit:6,color:'#eee'});	
+rssy[x].push({title:'ImpressiveWebs',url:'http://feeds2.feedburner.com/ImpressiveWebs',limit:6,color:'#eee'});	
+rssy[x].push({title:'inserthtml',url:'http://feeds.feedburner.com/inserthtml',limit:6,color:'#eee'});	
 
 
 

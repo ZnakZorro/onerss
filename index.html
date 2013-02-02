@@ -56,7 +56,13 @@
  	<script type="text/javascript" charset="utf-8" src="js/popup.js"></script>
  	<!--script type="text/javascript" charset="utf-8" src="js/accelerometer.js"></script-->
  	<script type="text/javascript" charset="utf-8" src="js/media.js"></script>
+	
+<!--	
+	<script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/jquery.balancetext.js"></script>
+-->	
  	
+	
 <script type="text/javascript" charset="utf-8">
 var x___moje = 'eede2de857491ec7';
 var x___self = false;
@@ -122,11 +128,24 @@ var showImages = window.localStorage.getItem('_showImages_') || 1;
 	//startWatch();
 	if (showImages==0) $('#button_img').className='btn btn-mini btn-warning'; else $('#button_img').className='btn btn-mini btn-inverse';
 	
-
-			
-			
+	//applyBalanceText();	
+	//$(window).resize(applyBalanceText);		
     }
+	
+/*	
+function applyBalanceText() {
+	var container = $(".art");
+	container.find("p").balanceText();
+	container.find("h1").balanceText();
+	container.find("a.title").balanceText();
+	container.find(".hh1").balanceText();
+}
+*/
 
+
+	
+	
+	
    
     function onResume() {
 		//startWatch();
@@ -346,11 +365,12 @@ function koniec(){
 		var j=0;
 		var ilefeeds=thefeeds.length;
 		//var ftitle=rssy[id][i].title;
-var klasa=sekcja;
+
 
 			
 		for (var i=0; i<ilefeeds; i++) {
 			j=i+1;
+			var klasa=sekcja;
 					// czas  -----------------------------------------
 					
 					var delta = deltaCzas(thefeeds[i].publishedDate);
