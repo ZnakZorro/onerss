@@ -7,7 +7,13 @@ var x=-1;
 x++; rssy[x]=[];  sekcje[x]='Szczecin';	kolory[x]='#369';
 rssy[x].push({title:'Szczecin Gazeta',url:'http://rss.feedsportal.com/c/32739/f/530434/index.rss',limit:10});	
 //rssy[x].push({title:'Szczecin2 Gazeta',url:'http://rss.gazeta.pl/pub/rss/szczecin.xml',limit:10,color:'#FDFDF2'});	
-rssy[x].push({title:'Szczecin Radio',url:'http://www.radioszczecin.pl/rss.php?idp=1',limit:10});	
+rssy[x].push({title:'Szczecin Radio',url:'http://www.radioszczecin.pl/rss.php?idp=1',limit:10});
+rssy[x].push({title:'Kurier24 Aktualnosci',url:'http://www.24kurier.pl/cmspages/articles_rss.aspx',limit:10});
+//rssy[x].push({title:'Kurier24 Szczecin',url:'http://www.24kurier.pl/cmspages/articles_rss.aspx?dzial=szczecin',limit:10});
+rssy[x].push({title:'G24',url:'http://www.gs24.pl/apps/pbcs.dll/section?Category=rss&mime=xml',limit:10});
+
+
+	
 rssy[x].push({title:'Szczecin.eu',url:'http://www.szczecin.eu/rss.xml',limit:5});	
 rssy[x].push({title:'mmSzczecin',url:'http://www.mmszczecin.pl/rss/news.xml',limit:10});	
 rssy[x].push({title:'wSzczecinie',url:'http://www.wszczecinie.pl/rss/news.xml',limit:10});	
