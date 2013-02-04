@@ -109,6 +109,7 @@ $('#test').style.display='block';
 
 // load links from google Docs by JSON
 var jsd = document.createElement('script'); jsd.type = 'text/javascript'; jsd.async = true; jsd.src = jsonDoc;
+jsd.setAttribute('onLoad','zapakowany()');
 var sd = document.getElementsByTagName('script')[0]; 
 sd.parentNode.insertBefore(jsd, sd);
 
@@ -162,6 +163,14 @@ function applyBalanceText() {
 	container.find(".hh1").balanceText();
 }
 */
+
+
+function zapakowany(){
+	//console.log('zapakowany');
+	 pokazFEED(czytajID());
+}
+
+
 	function CzytajJsonLinki(result){
 		//console.log(result);
 		var rss_links=[];
