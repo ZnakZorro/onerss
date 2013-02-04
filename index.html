@@ -66,8 +66,11 @@
 <script type="text/javascript" charset="utf-8">
 
 var fusionTable = 'https://www.google.com/fusiontables/DataSource?docid=1-Gwm4dszbsCcxqiJyD2hv3xYMNV8trVokCnwZzo';
-var rssDoc  = 'https://spreadsheets.google.com/feeds/list/0ArjJ2huDwJOkdGNMX0pDaUEtanlIRWhVeDRBZ19TbGc/od6/public/basic?alt=rss';
-var jsonDoc = 'https://spreadsheets.google.com/feeds/list/0ArjJ2huDwJOkdGNMX0pDaUEtanlIRWhVeDRBZ19TbGc/od6/public/basic?alt=json&callback=CzytajJsonLinki';
+  var rssDoc  = 'https://spreadsheets.google.com/feeds/list/0ArjJ2huDwJOkdGNMX0pDaUEtanlIRWhVeDRBZ19TbGc/od6/public/basic?alt=rss';
+//var jsonDoc = 'https://spreadsheets.google.com/feeds/list/0ArjJ2huDwJOkdGNMX0pDaUEtanlIRWhVeDRBZ19TbGc/od6/public/basic?alt=rss
+//var jsonDoc = 'https://spreadsheets.google.com/feeds/cells/0ArjJ2huDwJOkdGNMX0pDaUEtanlIRWhVeDRBZ19TbGc/od6/public/basic?alt=rss';
+  var jsonDoc = 'https://spreadsheets.google.com/feeds/list/0ArjJ2huDwJOkdGNMX0pDaUEtanlIRWhVeDRBZ19TbGc/od6/public/basic?alt=json&callback=CzytajJsonLinki';
+                 
 
 var x___moje = 'eede2de857491ec7';
 var x___self = false;
@@ -102,6 +105,14 @@ $('#test').innerHTML='<pre>'+orssy+'</pre>';
 $('#test').style.display='block';
 */
 
+//LinksFromRSS(rssDoc);
+
+// load links from google Docs by JSON
+var jsd = document.createElement('script'); jsd.type = 'text/javascript'; jsd.async = true; jsd.src = jsonDoc;
+var sd = document.getElementsByTagName('script')[0]; 
+sd.parentNode.insertBefore(jsd, sd);
+
+
 		//document.getElementById('feeddiv').innerHTML='<h1>Czekamy</h1>';
 		document.addEventListener("resume", onResume, false);
 		document.addEventListener("pause", onPause, false);
@@ -115,7 +126,7 @@ $('#test').style.display='block';
 		//document.getElementById('infotest').innerHTML+=device.uuid+'<br />';
 		//document.getElementById('infotest').innerHTML+=device.platform+'<br />';
 		
-		LinksFromRSS(rssDoc);
+		
 		
         pokazFEED(czytajID());
 		document.getElementById("viewConfig").onclick=function(){viewConfig()};
@@ -153,9 +164,32 @@ function applyBalanceText() {
 */
 	function CzytajJsonLinki(result){
 		console.log(result);
+		var rss_links=[];
+		//var rrr={};
+		for (var l in result.feed.entry){
+			var entry=result.feed.entry[l];
+			var content   = result.feed.entry[l].content.$t;
+			var kategoria = result.feed.entry[l].title.$t;
+			var arr=content.split(',');
+			var dane=[];
+			for (var a in arr){
+				var items=arr[a].split(': ');
+				dane.push(items[1]);				
+			}
+			var tytul=dane[0];
+			var link=dane[1];
+			var ile=dane[2];
+			var rrr={title:dane[0],url:dane[1],limit:parseInt(dane[2])};
+			rss_links.push(rrr);						
+		}
+	console.log(rss_links);
+		sekcje.push('gDocs');
+		kolory.push('#963');
+		rssy.push(rss_links);
+	console.log(rssy);
 	}
 
-	
+// links from gDocs by rss -------------------	
 	function LinksFromRSS(rssDoc){
 		var feedpointer=new google.feeds.Feed(rssDoc);
 		feedpointer.load(CzytajLinki);
@@ -175,20 +209,15 @@ function applyBalanceText() {
 			}
 			var tytul=dane[0];
 			var link=dane[1];
-			var ile=dane[2];
-			//console.log(kategoria+' '+tytul+' '+link+' '+ile);
-			
+			var ile=dane[2];	
 			rrr={title:dane[0],url:dane[1],limit:parseInt(dane[2])};
 			rss_links.push(rrr);			
 		}
-			sekcje.push('gDocs');
-			kolory.push('#963');
-
-	//console.log(rrr);
-	//console.log(rss_links);
+		sekcje.push('gDocs');
+		kolory.push('#963');
 		rssy.push(rss_links);
-	//console.log(sekcje);	console.log(kolory);	console.log(rssy);
 	} 
+// links from gDocs by rss /////////////////////////
 	
 	
 	
