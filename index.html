@@ -163,30 +163,36 @@ function applyBalanceText() {
 }
 */
 	function CzytajJsonLinki(result){
-		console.log(result);
+		//console.log(result);
 		var rss_links=[];
 		//var rrr={};
+		var arkusz = result.feed.title.$t;
+		//console.log('arkusz='+arkusz);
 		for (var l in result.feed.entry){
 			var entry=result.feed.entry[l];
 			var content   = result.feed.entry[l].content.$t;
-			var kategoria = result.feed.entry[l].title.$t;
 			var arr=content.split(',');
 			var dane=[];
 			for (var a in arr){
 				var items=arr[a].split(': ');
 				dane.push(items[1]);				
 			}
-			var tytul=dane[0];
-			var link=dane[1];
-			var ile=dane[2];
-			var rrr={title:dane[0],url:dane[1],limit:parseInt(dane[2])};
+		//console.log("dane:");console.log(dane);
+			//var kategoria=dane[0];
+			//var tytul=dane[1];
+			//var link=dane[2];
+			//var ile=dane[3];
+			//var kolor=dane[4];
+			//var status=dane[5];
+			var rrr={title:dane[1],url:dane[2],limit:parseInt(dane[3])};
 			rss_links.push(rrr);						
 		}
-	console.log(rss_links);
-		sekcje.push('gDocs');
+	//console.log(rss_links);
+		sekcje.push(arkusz);
 		kolory.push('#963');
 		rssy.push(rss_links);
-	console.log(rssy);
+	//console.log(rssy);
+	//console.log("json=");console.log(sekcje);
 	}
 
 // links from gDocs by rss -------------------	
@@ -396,7 +402,7 @@ function koniec(){
     	//document.getElementById('test').innerHTML+='rss '+id+' '+opiszID();
 		kasuj();
 		//document.getElementById("feeddiv").innerHTML='<h1 class="hh1" style="background:'+kolory[id]+'">'+sekcje[id]+'</h1>';
-		
+//console.log('rssfeedsetup='+id); console.log(sekcje);		
 		document.getElementById("feeddiv").innerHTML='<h2 id="title"><button onClick="gonext();"  class="btn btn-next"> \u00BB  </button> '+sekcje[id]+' / '+godzin+'h</h2>';
 		for(var i in rssy[id]) {
 			var v = rssy[id][i].url;
