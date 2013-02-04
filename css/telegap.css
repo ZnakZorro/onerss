@@ -1,6 +1,4 @@
 body {font-family: 'PT Sans Narrow', sans-serif; font-size:16px; margin:0; padding:0;-webkit-tap-highlight-color:blue;}
-/*article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block;}*/
-/*article {border: 1px solid white;}*/
 div.menu{background:#124; position:absolute; top:20px; left:10px; border:1px solid #fff; padding:5px 10px; }
 a {color: #69C;	text-decoration: none; -webkit-tap-highlight-color:blue;}
 a:hover {color: #F60;}
@@ -38,7 +36,6 @@ table.traffic {background:#fff; padding:5px; margin-top:5px;border:1px solid gra
 table.traffic tr.sectiontableentry2 {background:#f4f4f4;}
 table.traffic tr.sectiontableheader {background:#444; color:#fff;}
 
-.box {/*-webkit-border-radius:9px 9px 9px 9px; border-radius:9px 9px 9px 9px;*/}
 #title {text-align:center;color:white; padding:10px 5px; margin:0; background:#248; height:35px;}
 
 .btn-line {line-height:0 !important; padding:4px 8px !important;}
@@ -69,3 +66,7 @@ div#menu .btn {min-width:4em;}
 .social-buttons .googleplus-one { width: 50px; height: 65px; background-position: -75px 0; }
 .social-buttons .facebook-like { width: 50px; height: 65px; background-position: -145px 0; }
 .social-buttons .linkedin-share { width: 60px; height: 65px; background-position: -215px 0; }
+
+.col {}
+.box {/*-webkit-border-radius:9px 9px 9px 9px; border-radius:9px 9px 9px 9px;*/}
+.pusty {float:none; clear:none; display:inline;}
