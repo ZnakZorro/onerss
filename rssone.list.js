@@ -92,9 +92,9 @@ rssy[x].push({title:'inserthtml',url:'http://feeds.feedburner.com/inserthtml',li
 
 // Allegro
 x++; rssy[x]=[];		sekcje[x]='Allegro';	kolory[x]='#CDCD00';
-rssy[x].push({title:'WOSP' ,url:'http://aukcje.wosp.org.pl/listing?rss=1&searchInNewest=1',limit:50});	
+//rssy[x].push({title:'WOSP' ,url:'http://aukcje.wosp.org.pl/listing?rss=1&searchInNewest=1',limit:50});	
 rssy[x].push({title:'Kamadu' ,url:'http://allegro.pl/rss.php/user?uid=3561416',limit:20});	
-rssy[x].push({title:'Ecotronics.pl' ,url:'http://allegro.pl/rss.php/user?uid=5741396',limit:50});	
+//rssy[x].push({title:'Ecotronics.pl' ,url:'http://allegro.pl/rss.php/user?uid=5741396',limit:50});	
 rssy[x].push({title:'Nex-3' ,url:'http://allegro.pl/rss.php?feed=search&category=0&change_view=1&distance=1&listing_interval=7&listing_sel=2&location_radio=1&offer_type=0&order=t&pay=0&selected_country=1&shippingTime=0&state=0&string=sony+nex-3+body+-deki%2A&view=gtext',limit:10});	
 rssy[x].push({title:'NEX3-16mm' ,url:'http://allegro.pl/rss.php?feed=search&category=89958&string=16mm',limit:20});	
 rssy[x].push({title:'Led Power' ,url:'http://allegro.pl/rss.php?feed=search&category=67252&string=led+power',limit:10});	
@@ -125,10 +125,10 @@ rssy[x].push({title:'PulsBiznesu' ,url:'http://www.pb.pl/atom',limit:10});
 rssy[x].push({title:'YankoDesign' ,url:'http://feeds.feedburner.com/yankodesign',limit:10});
 rssy[x].push({title:'TrenDir' ,url:'http://www.trendir.com/atom.xml',limit:10});
 
-rssy[x].push({title:'PrzepisyNET' ,url:'http://feeds.feedburner.com/PrzepisyNET',limit:10});
-rssy[x].push({title:'ugotuj.to' ,url:'http://ugotuj.to/pub/rss/ugotujto.htm',limit:10});
-rssy[x].push({title:'Gotuj.pl' ,url:'http://gotuj.pl/rss',limit:10});
-rssy[x].push({title:'kotlet.tv' ,url:'http://kotlet.tv/feed',limit:10});
+//rssy[x].push({title:'PrzepisyNET' ,url:'http://feeds.feedburner.com/PrzepisyNET',limit:10});
+//rssy[x].push({title:'ugotuj.to' ,url:'http://ugotuj.to/pub/rss/ugotujto.htm',limit:10});
+//rssy[x].push({title:'Gotuj.pl' ,url:'http://gotuj.pl/rss',limit:10});
+//rssy[x].push({title:'kotlet.tv' ,url:'http://kotlet.tv/feed',limit:10});
 //rssy[x].push({title:'' ,url:'',limit:10});
 //rssy[x].push({title:'' ,url:'',limit:10});
 

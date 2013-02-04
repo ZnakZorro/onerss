@@ -64,6 +64,11 @@
  	
 	
 <script type="text/javascript" charset="utf-8">
+
+var fusionTable = 'https://www.google.com/fusiontables/DataSource?docid=1-Gwm4dszbsCcxqiJyD2hv3xYMNV8trVokCnwZzo';
+var rssDoc  = 'https://spreadsheets.google.com/feeds/list/0ArjJ2huDwJOkdGNMX0pDaUEtanlIRWhVeDRBZ19TbGc/od6/public/basic?alt=rss';
+var jsonDoc = 'https://spreadsheets.google.com/feeds/list/0ArjJ2huDwJOkdGNMX0pDaUEtanlIRWhVeDRBZ19TbGc/od6/public/basic?alt=json&callback=CzytajJsonLinki';
+
 var x___moje = 'eede2de857491ec7';
 var x___self = false;
 var menuOpen = false;
@@ -110,6 +115,7 @@ $('#test').style.display='block';
 		//document.getElementById('infotest').innerHTML+=device.uuid+'<br />';
 		//document.getElementById('infotest').innerHTML+=device.platform+'<br />';
 		
+		LinksFromRSS(rssDoc);
 		
         pokazFEED(czytajID());
 		document.getElementById("viewConfig").onclick=function(){viewConfig()};
@@ -145,8 +151,44 @@ function applyBalanceText() {
 	container.find(".hh1").balanceText();
 }
 */
+	function CzytajJsonLinki(result){
+		console.log(result);
+	}
 
+	
+	function LinksFromRSS(rssDoc){
+		var feedpointer=new google.feeds.Feed(rssDoc);
+		feedpointer.load(CzytajLinki);
+	}
+	function CzytajLinki(result){
+		//console.log(result);
+		var rss_links=[];
+		var rrr={};
+		for (var l in result.feed.entries){
+		//console.log(l);
+			var kategoria=result.feed.entries[l].title;
+			var arr=result.feed.entries[l].content.split(',');
+			var dane=[];
+			for (var a in arr){
+				var items=arr[a].split(': ');
+				dane.push(items[1]);				
+			}
+			var tytul=dane[0];
+			var link=dane[1];
+			var ile=dane[2];
+			//console.log(kategoria+' '+tytul+' '+link+' '+ile);
+			
+			rrr={title:dane[0],url:dane[1],limit:parseInt(dane[2])};
+			rss_links.push(rrr);			
+		}
+			sekcje.push('gDocs');
+			kolory.push('#963');
 
+	//console.log(rrr);
+	//console.log(rss_links);
+		rssy.push(rss_links);
+	//console.log(sekcje);	console.log(kolory);	console.log(rssy);
+	} 
 	
 	
 	
@@ -454,6 +496,7 @@ function viewImages(){
   	<button onClick="pokazFEED(7);" class="btn btn-warning">Allegro</button>	
   	<button onClick="pokazFEED(8);" class="btn btn-success">WIZUT</button>
   	<button onClick="pokazFEED(9);" class="btn btn-inverse">Zapas</button>
+	<button onClick="pokazFEED(10);" class="btn btn-inverse">gDocs</button>
  	<button onClick="viewInfo();"   class="btn btn-warning">InfoSzczecin</button>	
  	<!--button onClick="deviceInfo();" class="btn btn-warning">device Info</button-->
 	 &nbsp;   &nbsp;  
