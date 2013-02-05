@@ -9,6 +9,77 @@
  	<link rel="stylesheet" href="css/bootstrap.mi.css">
 	<link rel="stylesheet" href="css/telegap.css">
 <style>
+
+/*xxx*/
+body:before { /* top shadow */ content: ""; position: fixed; top: -10px; left: -10px; width: 110%; height: 10px;  -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8); -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8); -ms-box-shadow: 0px 0px 10px rgba(0,0,0,.8); -o-box-shadow: 0px 0px 10px rgba(0,0,0,.8); box-shadow: 0px 0px 10px rgba(0,0,0,.8);  z-index: 100; }
+
+div#prev {
+	width: 0px;
+	height: 0px;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-right: 20px solid white;
+	float:left;
+	cursor:pointer;
+	margin-left:10px;
+	margin-right:20px;
+}
+
+div#next {
+	width: 0px;
+	height: 0px;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 20px solid white;
+	float:right;
+	cursor:pointer;
+	margin-right:10px;
+}
+
+/*
+.complexBlock {
+	width: -webkit-calc(100% - 50% / 3);
+	width: -o-calc(100% - 50% / 3);
+	width: calc(100% - 50% / 3);
+	padding: 5px -webkit-calc(3% - 2px);
+	padding: 5px -o-calc(3% - 2px);
+	padding: 5px calc(3% - 2px);
+	margin-left: -webkit-calc(10% + 10px);
+	margin-left: o-calc(10% + 10px);
+	margin-left: calc(10% + 10px);
+	border:1px solid silver;
+}
+
+.complexBlock {
+	height:40px;
+	width: -webkit-calc(100% - 40px);
+	width: -o-calc(100% - 40px);
+	width: calc(100% - 40px);
+	padding: 5px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:10px;
+	border:1px solid silver;
+	background:#000;
+}
+*/
+.complexBlock {
+	height:40px;
+	width:100%;
+	padding: 5px 0;
+	margin:0px;
+	background:#004;
+	border:none;
+	position:fixed;
+	bottom:0px;
+}
+
+
+
+/*xxx*/
+
+
+
 #pilot {display:none; position:fixed; right:1px; top:10px; padding:2px; border:1px solid gray; background:#f8f8f8;}
 
 	article {
@@ -114,13 +185,8 @@ sd.parentNode.insertBefore(jsd, sd);
 		document.addEventListener("offline", onOffline, false);
 		document.addEventListener("backbutton", onBackKeyDown, false);
 		document.addEventListener("menubutton", onMenuKeyDown, false);		
-		//document.getElementById('test').innerHTML='onDeviceReady end<br />';        
-	    //pokazFEED();	
 		
-		//document.getElementById('infotest').innerHTML+=device.uuid+'<br />';
-		//document.getElementById('infotest').innerHTML+=device.platform+'<br />';
-		
-        pokazFEED(czytajID());
+        //pokazFEED(czytajID());
 		document.getElementById("viewConfig").onclick=function(){viewConfig()};
 		
 		// font
@@ -467,8 +533,11 @@ function koniec(){
 					// czas  ostatnio -----------------------------------------
 			//console.log(thefeeds[i]);
 			var link  = korekta_link(thefeeds[i].link,thefeeds[i].content);
+
 			var image=null;
 			if (showImages==1) {image = szukaj_img(thefeeds[i].link,thefeeds[i].content);}
+			var theContent=thefeeds[i].contentSnippet;
+//if (link.indexOf('gizmodo') > 1) theContent=modGizmo(theContent);
 if (image) klasa+=' imag';			
 //console.log(showImages);console.log(image);			
 			rssoutput+='<div class="art '+klasa+'">';
@@ -483,7 +552,7 @@ if (image) klasa+=' imag';
 			//rssoutput+="<a class='btn btn-small' href='javascript:void(0);' onClick='loadURL(\""+link+"\");' > [>>>] </a>";
 			rssoutput+="<div class='well'>";		
 				if (image) rssoutput+="<div class='image'>"+image+"</div>";
-				rssoutput+=thefeeds[i].contentSnippet;		
+				rssoutput+=theContent;		
 			rssoutput+="</div>";		
 			rssoutput+='</div>';
 		}
@@ -502,7 +571,15 @@ if (image) klasa+=' imag';
     }
 // =================================================================	
  
-
+/* 
+function modGizmo(theContent){
+	console.log(theContent);
+	var start = theContent.indexOf('#');
+	var stop  = theContent.length - start;
+	console.log(start+' '+stop);
+	return theContent.slice(start,stop);
+}
+*/
 
 function viewImages(){
 	if (showImages==1) showImages=0; else showImages=1;
@@ -572,7 +649,7 @@ function viewImages(){
   	<button onClick="podzielsie2();" >Share2</button>
   	<input type="button"  class="btn2 btn-info" onClick="podzielsie3();" value="Share3" />
 -->
-   
+<!--   
 <div id="menufooter" style="position:fixed; left:0px; bottom:0px; background:#333; float:left; width:100%; padding:4px 0; margin:0; opacity:0.9;z-index:2;">
  	<button onClick="goback();"  class="btn btn-line" style="float:left;"><img src="pliki/arr-left.png" /></button>
 		<button onClick="onMenuKeyDown();" class="btn btn-primary">Menu</button>
@@ -582,6 +659,20 @@ function viewImages(){
 		<button onClick="window.location.reload();" class="btn btn-mini btn-primary">&#x21D5;</button> 		
  	<button onClick="gonext();"  class="btn btn-line" style="float:right;"><img src="pliki/arr-right.png" /></button> 
 </div>
+-->
+
+<!--xxx-->
+<div class="complexBlock">
+	<div id="prev"onclick="goback();"></div>
+		<button onClick="onMenuKeyDown();" class="btn btn-primary">Menu</button>
+		<button onClick="viewLSlinki(x___self);" class="btn btn-danger">Linki</button>
+		<button onClick="viewRemotelinki(x___self);" class="btn">zURL</button>
+		<button onClick="viewImages();" class="btn btn-mini btn-inverse" id="button_img" >img</button>
+		<button onClick="window.location.reload();" class="btn btn-mini btn-primary">&#x21D5;</button> 		
+	<div id="next" onclick="gonext();"></div>
+</div>
+<!--xxx-->
+
 
 
 <div id='infotest'></div>
