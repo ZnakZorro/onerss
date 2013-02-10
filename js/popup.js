@@ -36,7 +36,7 @@ xmlhttp.send();
 	//Socialite
 	/*twitter*/
 	if (x___self) {
-	html_btn+='<div>';
+	html_btn+='<div class="social">';
 			html_btn+=' &nbsp; <a href="https://twitter.com/share" class="twitter-share-button" data-url="'+link+'" data-text="'+title+'" data-via="znakzorro" data-lang="pl" data-count="none" rel="nofollow" target="_blank">Tweetnij</a>';	
 			html_btn+=' &nbsp; <a href="https://plus.google.com/share?url='+link+'" class="" data-size="tall" data-href="'+link+'" rel="nofollow" target="_blank"><img src="https://www.gstatic.com/images/icons/gplus-32.png" alt="Share on Google+"/></a>';			
 			html_btn+=' &nbsp; <a href="http://www.facebook.com/sharer.php?u='+link+'&amp;t='+title+'" class="" data-href="'+link+'" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank">Share on Facebook</a>';

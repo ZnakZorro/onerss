@@ -24,10 +24,17 @@ a.active {color:black !important;}
 div.image {max-width:64px; max-height:48px; float:left;  margin-right:4px; display: inline-block;}
 img       {max-width:64px; max-height:48px; padding:0 !important; margin:0 !important;}
 
+#popup {display:none; background:#ddd; border:2px solid #444; padding:2px; position:fixed; top:5%; left:5%; width:90%; margin:0; height: 80%;overflow: scroll;}
+#popup #popup_body {background:white; padding:0; min-height:150px;line-height:160%;}
+#popup #popup_header, #popup #popup_footer{font-weight:bold; text-align:right; padding:5px; font-size:110%;}
+#popup_title {float:left; text-align:left; padding-top:5px;}
+
+/*
 #popup {display:none; background:#ddd; border:2px solid #444; padding:2px 10px; position:fixed; top:40px; left:50%; margin-left:-410px; width:800px;  max-width:95%;}
 #popup #popup_body {background:white; padding:10px; min-height:100px;line-height:160%;}
 #popup #popup_header, #popup #popup_footer{font-weight:bold; text-align:right; padding:5px; font-size:110%;}
 #popup_title {float:left; text-align:left; padding-top:5px;}
+*/
 div.auto img {max-height:100%; max-width:100%;}
 div.batony {margin:5px;}
 div.constant .btn {min-width:5em;}
@@ -42,10 +49,6 @@ table.traffic tr.sectiontableheader {background:#444; color:#fff;}
 .btn-next {float:left; line-height:20px;font-size:23px; font-weight:bold;}
 div#menu .btn {min-width:4em;}
 
-#popup {display:none; background:#ddd; border:2px solid #444; padding:2px; position:absolute; top:5%; left:5%; width:90%; margin:0; height: 80%;overflow: scroll;}
-#popup #popup_body {background:white; padding:0; min-height:150px;line-height:160%;}
-#popup #popup_header, #popup #popup_footer{font-weight:bold; text-align:right; padding:5px; font-size:110%;}
-#popup_title {float:left; text-align:left; padding-top:5px;}
 
 
 
@@ -70,3 +73,114 @@ div#menu .btn {min-width:4em;}
 .col {}
 .box {/*-webkit-border-radius:9px 9px 9px 9px; border-radius:9px 9px 9px 9px;*/}
 .pusty {float:none; clear:none; display:inline;}
+
+
+
+
+
+
+/*xxx*/
+body:before { /* top shadow */ content: ""; position: fixed; top: -10px; left: -10px; width: 110%; height: 10px;  -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.8); -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.8); -ms-box-shadow: 0px 0px 10px rgba(0,0,0,.8); -o-box-shadow: 0px 0px 10px rgba(0,0,0,.8); box-shadow: 0px 0px 10px rgba(0,0,0,.8);  z-index: 100; }
+
+div#prev {
+	width: 0px;
+	height: 0px;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-right: 20px solid white;
+	float:left;
+	cursor:pointer;
+	margin-left:10px;
+	margin-right:20px;
+}
+
+div#next {
+	width: 0px;
+	height: 0px;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 20px solid white;
+	float:right;
+	cursor:pointer;
+	margin-right:10px;
+}
+
+/*
+.complexBlock {
+	width: -webkit-calc(100% - 50% / 3);
+	width: -o-calc(100% - 50% / 3);
+	width: calc(100% - 50% / 3);
+	padding: 5px -webkit-calc(3% - 2px);
+	padding: 5px -o-calc(3% - 2px);
+	padding: 5px calc(3% - 2px);
+	margin-left: -webkit-calc(10% + 10px);
+	margin-left: o-calc(10% + 10px);
+	margin-left: calc(10% + 10px);
+	border:1px solid silver;
+}
+
+.complexBlock {
+	height:40px;
+	width: -webkit-calc(100% - 40px);
+	width: -o-calc(100% - 40px);
+	width: calc(100% - 40px);
+	padding: 5px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:10px;
+	border:1px solid silver;
+	background:#000;
+}
+*/
+.complexBlock {
+	height:40px;
+	width:100%;
+	padding: 5px 0;
+	margin:0px;
+	background:#004;
+	border:none;
+	position:fixed;
+	bottom:0px;
+}
+
+
+
+/*xxx*/
+
+
+
+#pilot {display:none; position:fixed; right:1px; top:10px; padding:2px; border:1px solid gray; background:#f8f8f8;}
+
+	article {
+		width: 22.95%;
+		float: left;
+		margin: 1%;
+	}
+	
+@media (max-width:1439px){
+	article {
+		width: 30.95%;
+	}
+}	
+
+@media (max-width:798px){
+	article {
+		width: 47.95%;
+	}
+	div.hh1 {font-size:115%; line-height:110%;}
+}	
+	
+@media (max-width:638px){
+	article {
+		width: 100%;
+		float: none;
+		margin: 0;
+	}	
+	
+}
+
+#infotest {display:block;}
+.art.imag {min-height:68px;}
+.art.Allegro.imag {min-height:70px;}
+
+div.social{margin-top:20px;}
