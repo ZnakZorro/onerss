@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.onerss"
         versionCode="10" 
-        version   = "4.0.0">
+        version   = "5.0.0">
 
 
     <name>ZnakZorro-OneRSS</name>
@@ -15,10 +15,10 @@
     <author href="http://zszczech.zut.edu.pl/git" email="zs@g.pl">
         ZnakZorro
     </author>
-    <preference name="phonegap-version" value="3.1.0" />
+    <preference name="phonegap-version" value="3.4.0" />
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
-    <preference name="fullscreen"       value="false" />
+    <preference name="fullscreen"       value="true" />
 	
 <icon src="pliki/icon-96.png" />
 <icon src="pliki/icon-36.png" gap:platform="android" gap:density="ldpi" />
@@ -35,6 +35,6 @@
 
 <access origin="*" onlyInBrowser="true" />
 <preference name="stay-in-webview" value="false" />
-<preference name="splash-screen-duration" value="3000" />	
+	
 
 </widget>
